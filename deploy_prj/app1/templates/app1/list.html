@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacts</title>
+  </head>
+  <body>
+    <form action="{% url 'app1:result' %}">
+        <input name="data" size="10" value=""></input>
+        <input type="submit" value="확인" />
+      </form>
+      <br />
+    {% for post in posts %}
+    ▶<a href="{% url 'app1:detail' post.id %}">{{ post.name }} - {{ post.phone_num }}</a>
+    <a href="{% url 'app1:update' post.id %}">수정</a> <a href="{% url 'app1:delete' post.id %}">삭제</a>
+    <br />
+    {% empty %} 저장된 연락처가 없습니다. {% endfor %}
+    <br /><br />
+    <a href="{% url 'app1:create' %}">새 번호 추가</a><br />
+  </body>
+</html>
