@@ -100,7 +100,7 @@ DATABASES = {
         #'NAME': BASE_DIR / 'db.sqlite3',
 
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'deploytest',  #mysql
+        'NAME': 'deploydb',  #mysql
         'USER': DBUSER,
         'PASSWORD': DBPASSWORD, 
         'HOST': DBHOST, 
