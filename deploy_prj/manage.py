@@ -5,7 +5,7 @@ import sys
 
 
 def main():
-    env = os.getenv('DJANGO_ENV', 'prod')  # 기본값은 'local'
+    env = os.getenv('DJANGO_ENV', 'local')  # 기본값은 'local'
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'deploy_prj.settings.local')
     try:
         from django.core.management import execute_from_command_line
