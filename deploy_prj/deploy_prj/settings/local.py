@@ -7,7 +7,7 @@ environ.Env.read_env(env_file=os.path.join(BASE_DIR, '.env'))  # .env 파일 읽
 
 SECRET_KEY = env('DJANGO_SECRET')
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["*", "localhost", "127.0.0.1", ".cloudtype.app"]
 
 DEBUG = True
 
