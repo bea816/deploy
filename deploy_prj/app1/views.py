@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Phone
 from django.views.generic import ListView
+from django.views.decorators.csrf import csrf_protect
 
 def index(request):
     return render(request, 'app1/index.html')
