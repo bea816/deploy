@@ -13,10 +13,10 @@ SECRET_KEY = get_env_variable('DJANGO_SECRET')
 # 배포
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", ".cloudtype.app", "port-0-deploy-m3i3f5ml9d169303.sel4.cloudtype.app"]
 CSRF_TRUSTED_ORIGINS = [
+    'https://port-0-deploy-m3i3f5ml9d169303.sel4.cloudtype.app',
     'https://*.cloudtype.app',
     'https://localhost',
-    'https://127.0.0.1'
-    'https://port-0-deploy-m3i3f5ml9d169303.sel4.cloudtype.app/',
+    'https://127.0.0.1',
 ]
 
 
