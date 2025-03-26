@@ -12,33 +12,13 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
-import environ # 클라우드타입
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-def get_env_variable(var_name):
-    try:
-        return os.environ[var_name]
-    except KeyError:
-        error_msg = 'Set the {} environment variable'.format(var_name)
-        raise ImproperlyConfigured(error_msg)
-
-SECRET_KEY = get_env_variable('DJANGO_SECRET')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-# ALLOWED_HOSTS = ['*']
-
-# 배포
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", ".cloudtype.app"]
-CSRF_TRUSTED_ORIGINS = ['https://*.cloudtype.app']
 
 
 # Application definition
@@ -89,25 +69,9 @@ WSGI_APPLICATION = 'deploy_prj.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DBNAME = get_env_variable('DBNAME')
-DBUSER = get_env_variable('DBUSER')
-DBPASSWORD = get_env_variable('DBPASSWORD')
-DBHOST = get_env_variable('DBHOST')
-DBPORT = get_env_variable('DBPORT')
 
-DATABASES = {
-    'default': {
-        #'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': BASE_DIR / 'db.sqlite3',
 
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': DBNAME,
-        'USER': DBUSER,
-        'PASSWORD': DBPASSWORD, 
-        'HOST': DBHOST, 
-        'PORT': DBPORT
-    }
-}
+
 
 
 # Password validation
